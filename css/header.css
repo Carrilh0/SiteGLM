@@ -17,6 +17,11 @@
     justify-content: center;
     
  }
+.navbar .navbar-start ul{
+    display: flex;
+    align-items: center;
+    
+ }
  .navbar .navbar-start .navbar-item{
     padding: 0px 20px;    
     text-transform: uppercase;
