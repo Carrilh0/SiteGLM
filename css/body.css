@@ -2,9 +2,11 @@
     font-family: Poppins;
     src: url("fonts/Poppins-Regular.ttf") format("opentype");
 }
-.body{
-    font-family: "Poppins";
+@font-face {
+    font-family: PoppinsBold;
+    src: url("fonts/Poppins-Bold.ttf") format("opentype");
 }
+
 
 .top-banner .imagem{
     max-width: 100%;
@@ -53,19 +55,73 @@
     color: #fff;
 }
 
-.section-marca .column.marca img{
-    min-width: 100%;
-    max-width: 100%;
-    min-height: 100%;
-    max-height: 100%;
-}
 .section-marca .column.marca{
-    max-width: 100%;
-    max-height: 100%;
-    padding: 0 !important;
+    padding: 0;
+}
+.section-marca .column.marca .imagem{
+   float: right;
+}
 
+.section-marca .column.content .content{
+    
+    padding: 50px 100px 0 50px;
+    width: 700px;
 }
 .section-marca .column.content{
-    padding: 100px 0;
     background-color: #F6F6F6;
+    min-height: 500px ;
+    
+}
+.section-marca .column.content .content h1{
+    font-size: 35px;
+    font-family: PoppinsBold;
+}
+.section-marca .column.content .content.jabuti h1{
+    color: #01415C;
+
+}
+.section-marca .column.content .content.guttemberg h1{
+    color: #FF7022;
+}
+.section-marca .column.content .content p{
+    font-size: 20px;
+    font-family: Poppins;
+    padding: 10px 0;
+}
+
+.section-selo .column.selo .container-selo{
+    margin-right: 200px;
+    float: right;
+    font-family: Poppins;
+}
+.section-selo .column.selo .container-selo .content-selo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 150px 0;
+}
+.section-selo .column.selo .container-selo .imagem{
+    width: 250px;
+    float: left;
+}
+.section-selo .column.selo .container-selo p{
+    width: 350px;
+    font-size: 18px;
+    margin: 10px;
+}
+.section-selo .column.selo .container-selo a{
+    margin: 10px;
+    border-radius: 40px;
+    border: none;
+    background-color: #17D443;
+    color: white;
+    padding: 6px 25px;
+    font-size: 12px;
+
+}
+.section-selo .column.selo .container-selo span{
+    width: 350px;
+    font-size: 10px;
+    margin: 10px;
+
 }
