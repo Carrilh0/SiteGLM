@@ -6,7 +6,9 @@
     font-family: PoppinsBold;
     src: url("fonts/Poppins-Bold.ttf") format("opentype");
 }
-
+ ul{
+    display: block; list-style-type: disc; margin-top: 1em; margin-bottom: 1 em; margin-left: 0; margin-right: 0; padding-left: 40px;
+ }
 
 .top-banner .imagem{
     max-width: 100%;
@@ -106,7 +108,7 @@
 }
 .section-selo .column.selo .container-selo p{
     width: 350px;
-    font-size: 18px;
+    font-size: 22px;
     margin: 10px;
 }
 .section-selo .column.selo .container-selo a{
@@ -116,7 +118,7 @@
     background-color: #17D443;
     color: white;
     padding: 6px 25px;
-    font-size: 12px;
+    font-size: 13px;
 
 }
 .section-selo .column.selo .container-selo span{
@@ -124,4 +126,13 @@
     font-size: 10px;
     margin: 10px;
 
+}
+
+.section-selo .column.video .container-video{
+    width: 550px;
+    font-size: 22px;
+    margin: 10px;
+    font-family: Poppins;
+    padding: 100px 0;
+    font-weight: 200;
 }
