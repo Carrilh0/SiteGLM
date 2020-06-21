@@ -1,0 +1,35 @@
+@media only screen and (max-width: 1300px) {
+    
+    .section-marca .column.content .content{
+        width: 20px;
+        margin: 0 !important;
+        padding: 30px 100px 0 50px;
+
+    }
+    .section-marca .column.content .content p{
+        width: 450px;
+        font-size: 15px;
+    }
+
+    .section-selo .column.selo .container-selo {
+        margin-right: 10px;
+        
+    }
+    .section-selo .column.video .container-video{
+        width: 500px;
+        height: 315px;
+    }
+    .section-selo .column.selo .container-selo p{
+        font-size: 19px;
+    }
+    .section-selo .column.video .container-video{
+        font-size: 19px !important;
+    }
+    .section-selo .column.video .container-video iframe{
+        width: 500px;
+        height: 315px;
+    }
+}
+@media only screen and (max-width: 767px) {
+
+}
