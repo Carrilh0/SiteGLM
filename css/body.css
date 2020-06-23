@@ -103,12 +103,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
 }
 .section-selo .column.selo .container-selo .content-selo{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 150px 0;
+    width: 100%;
 }
 .section-selo .column.selo .container-selo .imagem{
     width: 250px;

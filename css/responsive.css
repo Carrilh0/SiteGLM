@@ -86,7 +86,7 @@
 
     .section-selo .column.video .container-video{
         width: 100% !important;
-        height: 1100px !important;
+        height: 550px !important;
     }
     .section-selo .column.video .container-video p{
         width: 100% !important;
@@ -105,8 +105,4 @@
         padding:0 !important
     }
 
-    .section-selo .column.selo .container-selo{
-        margin-right: -40px;
-
-    }
 }
