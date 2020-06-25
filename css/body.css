@@ -151,7 +151,7 @@
     font-size: 22px;
     margin: 10px;
     font-family: Poppins;
-    padding: 100px 0;
+    padding: 100px 20px;
     font-weight: 200;
 }
 .section-selo .column.video .container-video iframe{
@@ -178,7 +178,7 @@
     text-align: center;
     padding: 16px 10px;
     font-size: 13.5px;
-    border-radius: 3px 3px 0 0;
+    border-radius: 0 0 3px 3px;
 
 }
 .section-end .box-content img{

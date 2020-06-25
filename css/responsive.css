@@ -22,7 +22,7 @@
         font-size: 19px !important;
     }
     .section-selo .column.video .container-video iframe{
-        width: 500px;
+        width: 400px;
         height: 315px;
     }
 }
@@ -82,11 +82,12 @@
 
 }
 
-@media only screen and (max-width: 360px) {
+@media only screen and (max-width: 425px) {
 
     .section-selo .column.video .container-video{
         width: 100% !important;
         height: 550px !important;
+        padding: 0 20px;
     }
     .section-selo .column.video .container-video p{
         width: 100% !important;
@@ -95,7 +96,7 @@
         width: 100% !important;
     }
     .section-selo .column.video .container-video iframe{
-        width: 350px;
+        width: 300px;
         height: 250px;
     }
 
