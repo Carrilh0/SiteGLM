@@ -10,20 +10,8 @@
         width: 450px;
         font-size: 15px;
     }
-
-    .section-selo .column.video .container-video{
-        width: 500px;
-        height: 315px;
-    }
     .section-selo .column.selo .container-selo p{
         font-size: 19px;
-    }
-    .section-selo .column.video .container-video{
-        font-size: 19px !important;
-    }
-    .section-selo .column.video .container-video iframe{
-        width: 400px;
-        height: 315px;
     }
 }
 
