@@ -53,13 +53,17 @@ p, h1, h2, h3, h4, a, li{
     flex-direction: column;
     margin: 40px 0 60px 0;
 }
+.box-marcas .texts p{
+    font-size: 20px !important;
+    padding: 20px 0;
+}
+
 .box-marcas .marca{
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 290px;
     height: 320px;
-    padding: 30px;
     margin: 0 00px
 }
 .box-marcas .marca.guttemberg{
@@ -202,6 +206,9 @@ p, h1, h2, h3, h4, a, li{
     border-radius: 3px 3px 0 0;
 }
 
+.section-equipe {
+    margin-top: 50px;
+}
 .black{
     background-color: #181818;
 }
