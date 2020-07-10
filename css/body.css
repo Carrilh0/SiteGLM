@@ -8,7 +8,6 @@
 }
 
 p, h1, h2, h3, h4, a, li{
-    width: 100%;
     font-family: "Poppins";
 }
 .container{
@@ -61,10 +60,11 @@ p, h1, h2, h3, h4, a, li{
 .box-marcas .marca{
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     width: 290px;
     height: 320px;
-    margin: 0 00px
+    margin: 0 auto;
 }
 .box-marcas .marca.guttemberg{
     background-color: #FF7022;
@@ -221,6 +221,7 @@ p, h1, h2, h3, h4, a, li{
 
 .section-equipe .box-pessoa{
     margin-top: 50px;
+    min-height: 500px;
     background-color: #ECECEC;
     width: 330px;
     display: flex;
