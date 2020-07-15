@@ -16,8 +16,10 @@
 }
 
 @media only screen and (max-width: 768px) {
+    
     .section-marca .column.content .content{  
         padding: 50px 100px 0 20px;
+        min-height: 0;
 
     }
     .section-marca .column.content .content h1{  
