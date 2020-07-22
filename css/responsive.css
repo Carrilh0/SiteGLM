@@ -84,6 +84,10 @@
     .box-marcas .marca{
         width: 100%;
     }
+    .box-marcas .marca img{
+        width: 150px;
+        height: 150px;
+    }
     .section-end .box-content .content {
         width: 100%;
         min-height: 150px;
