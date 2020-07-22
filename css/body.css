@@ -96,13 +96,12 @@ p, h1, h2, h3, h4, a, li{
 .section-marca .column.marca{
     padding: 0;
     background-color: #F6F6F6;
+    display: flex;
     align-items: center;
     justify-content: center;
     
 }
 .section-marca .column.marca .imagem{
-    display: flex;
-    
 }
 
 .section-marca .column.content .content {

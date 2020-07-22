@@ -16,7 +16,9 @@
 }
 
 @media only screen and (max-width: 768px) {
-    
+    .section-marca .imagem img{
+        height: 360px !important;
+    }
     .section-marca .column.content .content{  
         padding: 50px 100px 0 20px;
         min-height: 0;
@@ -51,7 +53,9 @@
         padding: 20px 0 !important;
         align-items: center;
         text-align: center;
-
+    }
+    .section-selo .column.texts{
+        padding: 0 20px 25px;
     }
 
     #column-first, #column-last{
@@ -68,6 +72,9 @@
         align-items: center;
     }
 
+    .box-marcas{
+       padding: 0 20px;
+    }
     .box-marcas .marca{
         width: 100%;
     }
