@@ -226,7 +226,7 @@ p, h1, h2, h3, h4, a, li{
 
 .section-equipe .box-pessoa{
     margin-top: 50px;
-    min-height: 500px;
+    min-height: 480px;
     background-color: #ECECEC;
     width: 330px;
     display: flex;
@@ -249,8 +249,10 @@ p, h1, h2, h3, h4, a, li{
     letter-spacing: 7px;
 }
 .section-equipe .box-pessoa .descricao{
-    margin-top: 40px;
     text-align: center;
+    min-height: 240px;
+    display: flex;
+    align-items: center;
 }
 
 .black{
