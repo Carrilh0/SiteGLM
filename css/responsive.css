@@ -49,6 +49,9 @@
         width: 400px;
         height: 315px;
     }
+    .section-selo .column.selo .container-selo p{
+        width: 300px;
+    }
     .section-selo .column.selo .container-selo .content-selo{
         padding: 20px 0 !important;
         align-items: center;
@@ -75,6 +78,9 @@
     .box-marcas{
        padding: 0 20px;
     }
+    .box-marcas p{
+        font-size: 14px !important;
+     }
     .box-marcas .marca{
         width: 100%;
     }
