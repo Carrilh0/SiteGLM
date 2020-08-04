@@ -74,7 +74,18 @@
 
         </div>
     </nav>
-
+<?php if (isset($_GET["success"])) {
+    echo'<article id="success" class="message is-success is-small">
+            <div class="message-header">
+                <p>Sucesso</p>
+                <button class="delete" aria-label="delete" onClick="hide()"></button>
+            </div>
+            <div class="message-body">
+                Formulário enviado com sucesso!
+            </div>
+        </article>';
+}
+?>
     <section class="top-banner is-hidden-mobile">
         <div class="imagem">
             <img src="img/banner_topo_novo.png">
@@ -129,11 +140,14 @@
                             <li>Freud Explica </li>
                             <li>Jabuti Comunicação </li>
                             <li>Mulher Maravilha </li>
+                            <br>
                             <li>Construtores de Sucesso</li>
                             <li>Jornal Loucos Por Marketing</li>
+                            <br>
                             <li>Direto dos EUA</li>
                             <li>Momento Coach </li>
                             <li>Mundo Multinível </li>
+                            <br>
                             <li>Cheguei até aqui porque...</li>
                         </ul>
                     </div>
@@ -151,14 +165,16 @@
                             <div class="imagem">
                                 <img src="img/f367dc3b-96f4-449c-bea6-912529330912.jpg">
                             </div>
-                            <p>Estão abertas as inscrições para o Selo de Excelência em MMN 2020 do Jabuti Azul</p>
-                            <a href="https://forms.gle/EWG9rQrM2LXGXggK8">Clique Aqui</a>
+                            <a href="/formulario.php">Clique Aqui</a>
                             <span>Leia o regulamento e preencha o formulário para participar.</span>
                         </div>
                     </div>
                 </div>
                 <div class="column texts">
                     <div class="content">
+                        <div class="title">
+                            <p>Estão abertas as inscrições para o Selo de Excelência em MMN 2020 do Jabuti Azul</p>
+                        </div>
                         <p>O Selo de Excelência em MMN Jabuti Azul é uma certificação para as empresas de MMN que cumprirem os requisitos básicos das práticas e boas condutas deste mercado</p>
                     </div>
                 </div>
@@ -190,12 +206,6 @@
     </section>
     <section id="marcas" class="box-marcas">
         <div class="container">
-            <div class="texts">
-                <p class="has-text-weight-boldered">GRUPO LOUCOS POR MARKETING</p>
-                <p>O Grupo Loucos Por Marketing foi criado para ampliar o Jornal Loucos Por Marketing fundado por Paulo de Tarso Aragão há 12 anos, que queria oferecer mais informações de qualidade ao mercado e serviços para as empresas de Venda Direta e
-                    MKT Multinível. </p>
-
-            </div>
             <div class="columns is-centered">
                 <div class="column">
                     <div class="marca guttemberg">
@@ -702,6 +712,10 @@
                 }
             }]
         });
+
+        function hide() {
+            $('#success').css({"display":"none"});
+        }
     </script>
 
 </body>

@@ -76,7 +76,7 @@ li {
     margin: 40px 0 60px 0;
 }
 
-.box-marcas .columns {
+.box-marcas .s {
     margin: 40px 0;
 }
 
@@ -183,7 +183,6 @@ li {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 40px 0;
     width: 100%;
 }
 
@@ -218,9 +217,13 @@ li {
 
 .section-selo .column.texts {
     display: flex;
-    align-items: center;
     justify-content: flex-start;
     font-size: 20px;
+}
+
+.section-selo .column.texts .title p {
+    font-size: 35px;
+    font-family: PoppinsBold;
 }
 
 .section-end .box-container {
