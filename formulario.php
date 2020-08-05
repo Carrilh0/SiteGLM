@@ -3,6 +3,8 @@
 <head>
     <title>Formulário de Cadastro</title>
     <link href="css/form.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/glm32xx32_2.png" type="image/x-icon">
+    <link rel="icon" href="img/glm32xx32_2.png" type="image/x-icon">
 </head>
 
 <body>

@@ -3,12 +3,10 @@ AddHandler php73-script .php
 suPHP_ConfigPath /home/grupoloucosporma1/
 ##### LOCAWEB - NAO REMOVER #####
 
-Redirect /formulario https://forms.gle/EWG9rQrM2LXGXggK8
-
-#remove html file extension-e.g. https://example.com/file.html will become https://example.com/file
+#remove html file extension-e.g. https://example.com/file.php will become https://example.com/file
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}\.html -f
-RewriteRule ^(.*)$ $1.html [NC,L]
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
 
 # Force HTTPS
 RewriteCond %{SERVER_PORT} 80

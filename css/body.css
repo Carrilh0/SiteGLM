@@ -53,10 +53,11 @@ li {
 
 .section-1 .content ul li {
     display: inline;
+    break-before: right;
 }
 
 .section-1 .content ul li::before {
-    content: "  • ";
+    content: " • ";
 }
 
 .section-1 .video {
@@ -97,6 +98,10 @@ li {
 
 .box-marcas .marca.guttemberg {
     background-color: #FF7022;
+}
+
+.colunas {
+    break-before: auto;
 }
 
 .box-marcas .marca.jabuti {

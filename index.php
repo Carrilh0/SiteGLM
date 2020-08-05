@@ -132,7 +132,7 @@
                 <div class="column is-8-desktop is-12-mobile">
                     <div class="content">
                         <p class="has-text-weight-boldered">No canal do Jabuti Azul você vai encontrar as seguintes colunas: </p>
-                        <ul>
+                        <ul class="colunas">
                             <li>Jabuti Cultural </li>
                             <li>Jabuti Jurídico</li>
                             <li>Jabuti Professor</li>
@@ -165,7 +165,7 @@
                             <div class="imagem">
                                 <img src="img/f367dc3b-96f4-449c-bea6-912529330912.jpg">
                             </div>
-                            <a href="/formulario.php">Clique Aqui</a>
+                            <a href="/formulario">Clique Aqui</a>
                             <span>Leia o regulamento e preencha o formulário para participar.</span>
                         </div>
                     </div>
