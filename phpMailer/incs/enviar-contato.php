@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 		$mail->Body = $Html;
 		$mail->AddAttachment($_FILES['file']['tmp_name'], $_FILES['file']['name']);
 		
-		$mail->AddAddress('vitor.carrilho@hotmail.com');		
+		$mail->AddAddress('contato@grupoloucospormarketing.com.br');		
 						
 		$enviado = $mail->Send();
 
