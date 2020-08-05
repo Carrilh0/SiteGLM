@@ -18,6 +18,29 @@
         </header>
 
         <form enctype="multipart/form-data" method="POST" action="phpMailer/incs/enviar-contato.php" >
+            
+            <div class="previews">
+                <a href="downloads/Regulamento.pdf" target="_blank">
+                    <div class="preview">
+                        <div class="name">
+                            REGULAMENTO
+                        </div>
+                        <div class="image">
+                            <img src="img/regulamento.jpg">
+                        </div>
+                    </div>
+                </a>
+                <a href="downloads/FAQ.pdf" target="_blank">
+                    <div class="preview">
+                        <div class="name">
+                            FAQ
+                        </div>
+                        <div class="image">
+                            <img src="img/faq.jpg">
+                        </div>
+                    </div>
+                </a>
+            </div>
             <div class="form-group">
                 <label id="name-label" for="razao">Razão Social *</label>
                 <input type="text" name="razao" id="razao" class="form-control" placeholder="Insira a razão social..." required/>
