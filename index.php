@@ -235,7 +235,7 @@
                 <div class="column">
                     <div class="marca loucos">
                         <div class="imagem" style="width: 200px;">
-                            <img src="img/logo_lpm.png">
+                            <img style="margin: 0px auto;" src="img/logo_lpm.png">
                         </div>
                         <div class="content">
                             <p>O jornal pioneiro e de maior credibilidade do mercado de Marketing Multinível.</p>
