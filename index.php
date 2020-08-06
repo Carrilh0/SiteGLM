@@ -661,7 +661,7 @@
                     <p class="subtitle">paulo@grupoloucospormarketing.com.br</p>
                 </div>
                 <div class="perguntas">
-                    <p class="title">PERGUNTAS PARA OS COLUNISTAS E CONTÉUDISTAS DO JABUTI AZUL:</p>
+                    <p class="title">PERGUNTAS PARA OS COLUNISTAS E CONTEUDISTAS DO JABUTI AZUL:</p>
                     <p class="subtitle">jabutiazul@gmail.com</p>
                 </div>
             </div>
