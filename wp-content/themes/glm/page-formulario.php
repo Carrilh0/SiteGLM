@@ -25,7 +25,7 @@ $path = get_template_directory_uri();
             </p>
         </header>
 
-        <form enctype="multipart/form-data" method="POST" action="phpMailer/incs/enviar-contato.php" >
+        <form enctype="multipart/form-data" method="POST" action="<?php echo $path?>/phpMailer/incs/enviar-contato.php" >
             
             <div class="previews">
                 <a href="<?php echo $path?>/downloads/Regulamento.pdf" target="_blank">

@@ -52,6 +52,9 @@
                     <li><a href="#contato" class="navbar-item">
             Contato
           </a></li>
+                    <li><a href="/blog/" class="navbar-item">
+            Blog
+          </a></li>
                 </ul>
 
                 <div class="nav-icons">
