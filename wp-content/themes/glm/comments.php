@@ -1,94 +1,59 @@
 <?php
-// Do not delete these lines
-    if (!empty($_SERVER['SCRIPT_FILENAME']) && 'comments.php' == basename($_SERVER['SCRIPT_FILENAME']))
-        die ('Please do not load this page directly. Thanks!');
- 
-    if ( post_password_required() ) { ?>
-        <p class="nocomments">Este artigo está protegido por password. Insira-a para ver os comentários.</p>
-    <?php
-        return;
-    }
+/**
+ * Aqui vamos garantir que os comentários só vão aparecer em posts, páginas ou
+ * anexos. Além disso, também bloqueamos os comentários para páginas com senha,
+ * eles só vão aparecer se o usuário digitar a senha.
+ */
+if ( post_password_required() || ! is_singular() ) {
+	return;
+}
 ?>
- <div class="comment">
 
-							<div class="post-info">
+<?php
+/**
+ * A área de comentários do tema "TwentyFourteen"
+ * com algumas edições necessárias.
+ */
+?>
+<div id="comments" class="comments-area">
 
-								<div class="left-area">
-									<a class="avatar" href="#"><img src="<?php echo $path?>/images/avatar-1-120x120.jpg" alt="Profile Image"></a>
-								</div>
+	<?php if ( have_comments() ) : ?>
 
-								<div class="middle-area">
-									<a class="name" href="#"><b>Katy Liu</b></a>
-									<h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
-								</div>
+        <h4><b>COMENTÁRIOS (<?php echo ($post->comment_count) ?>)</b></h4>
 
-								<div class="right-area">
-									<h5 class="reply-btn" ><a href="#"><b>REPLY</b></a></h5>
-								</div>
 
-							</div><!-- post-info -->
+	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+	<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+		<h5 class="screen-reader-text">Navegação dos comentários</h5>
+		<div class="nav-previous"><?php previous_comments_link( 'Comentários mais antigos' ); ?></div>
+		<div class="nav-next"><?php next_comments_link(  'Comentários mais recentes'  ); ?></div>
+	</nav><!-- #comment-nav-above -->
+	<?php endif; // Check for comment navigation. ?>
 
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-								ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-								Ut enim ad minim veniam</p>
+	<ol class="comment-list">
+		<?php
+			wp_list_comments( array(
+				'style'      => 'ol',
+				'short_ping' => true,
+				'avatar_size'=> 50,
+			) );
+		?>
+	</ol><!-- .comment-list -->
 
-						</div>
-<div id="comments">
-    <h3><?php comments_number('0 Comentários', '1 Comentário', '% Comentários' );?></h3>
- 
-    <?php if ( have_comments() ) : ?>
- 
-        <ol class="commentlist">
-        <?php wp_list_comments('avatar_size=64&type=comment'); ?>
-    </ol>
- 
-        <?php if ($wp_query->max_num_pages > 1) : ?>
-        <div class="pagination">
-        <ul>
-            <li class="older"><?php previous_comments_link('Anteriores'); ?></li>
-            <li class="newer"><?php next_comments_link('Novos'); ?></li>
-        </ul>
-    </div>
-    <?php endif; ?>
- 
-    <?php endif; ?>
- 
-    <?php if ( comments_open() ) : ?>
- 
-    <div id="respond">
-            <h3>Deixe o seu comentário!</h3>
- 
-            <form action="<?php echo get_option('siteurl'); ?>/wp-comments-post.php" method="post" id="commentform">
-            <fieldset>
-                <?php if ( $user_ID ) : ?>
- 
-                <p>Autentificado como <a href="<?php echo get_option('siteurl'); ?>/wp-admin/profile.php"><?php echo $user_identity; ?></a>. <a href="<?php echo wp_logout_url(); ?>" title="Sair desta conta">Sair desta conta &raquo;</a></p>
- 
-                <?php else : ?>
- 
-                <label for="author">Nome:</label>
-                <input type="text" name="author" id="author" value="<?php echo $comment_author; ?>" />
- 
-                <label for="email">Email:</label>
-                <input type="text" name="email" id="email" value="<?php echo $comment_author_email; ?>" />
- 
-                <label for="url">Website:</label>
-                <input type="text" name="url" id="url" value="<?php echo $comment_author_url; ?>" />
- 
-                <?php endif; ?>
- 
-                <label for="comment">Mensagem:</label>
-                <textarea name="comment" id="comment" rows="" cols=""></textarea>
- 
-                <input type="submit" class="commentsubmit" value="Enviar Comentário" />
- 
-                <?php comment_id_fields(); ?>
-                <?php do_action('comment_form', $post->ID); ?>
-            </fieldset>
-        </form>
-        <p class="cancel"><?php cancel_comment_reply_link('Cancelar Resposta'); ?></p>
-        </div>
-     <?php else : ?>
-        <h3>Os comentários estão fechados.</h3>
-<?php endif; ?>
-</div>
+	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>
+	<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
+		<h5 class="screen-reader-text">Navegação dos comentários</h5>
+		<div class="nav-previous"><?php previous_comments_link( 'Comentários mais antigos' ); ?></div>
+		<div class="nav-next"><?php next_comments_link(  'Comentários mais recentes'  ); ?></div>
+	</nav><!-- #comment-nav-above -->
+	<?php endif; // Check for comment navigation. ?>
+
+	<?php if ( ! comments_open() ) : ?>
+	<p class="no-comments">Os comentários estão fechados.</p>
+	<?php endif; ?>
+	
+	<?php endif; // have_comments() ?>
+
+	<?php comment_form(); ?>
+
+</div><!-- #comments -->

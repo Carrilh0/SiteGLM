@@ -123,4 +123,39 @@ function get_image_src( $object, $field_name, $request ) {
   );
   return $feat_img_array[0];
 }
+
+
+
+function placeholder_author_email_url_form_fields($fields) {
+    $replace_author = __('Insira o seu nome');
+    $replace_email = __('Insira o seu e-mail');
+    $replace_url = __('Insira o seu site (opcional)');
+    
+    $fields['author'] = '<p class="comment-form-author">' . '<label for="author">' . __( 'Nome: *' ) . '</label> 
+    <input id="author" name="author" type="text" required placeholder="'.$replace_author.'" value="' . esc_attr( $commenter['comment_author'] ) . '" size="20"' . $aria_req . ' /></p>';
+                    
+    $fields['email'] = '<p class="comment-form-email"><label for="email">' . __( 'Email: *' ) . '</label>
+    <input id="email" name="email" type="text" required placeholder="'.$replace_email.'" value="' . esc_attr(  $commenter['comment_author_email'] ) .
+    '" size="30"' . $aria_req . ' /></p>';
+
+    $fields['url'] = '<p class="comment-form-url"><label for="url">' . __( 'Site:' ) . '</label>' .
+    '<input id="url" name="url" type="text" placeholder="'.$replace_url.'" value="' . esc_attr( $commenter['comment_author_url'] ) .
+    '" size="30" /></p>';
+    
+    return $fields;
+}
+add_filter('comment_form_default_fields','placeholder_author_email_url_form_fields');
+/**
+ * Comment Form Placeholder Comment Field
+ */
+function placeholder_comment_form_field($fields) {
+    $replace_comment = __('Insira o seu comentário');
+     
+    $fields['comment_field'] = '<p class="comment-form-comment"><label for="comment">' . __( 'Comentário: ' ) . '
+    </label><textarea id="comment" required name="comment" cols="45" rows="8" placeholder="'.$replace_comment.'" aria-required="true"></textarea></p>';
+    
+    return $fields;
+ }
+add_filter( 'comment_form_defaults', 'placeholder_comment_form_field' );
 ?>
+
