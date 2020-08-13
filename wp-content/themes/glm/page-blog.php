@@ -6,22 +6,21 @@ $path = get_template_directory_uri();
 include_once("header-blog.php") 
 
 ?>
-
+	<div class="slider"></div><!-- slider -->
 
 	<section class="blog-area section">
 		<div class="container">
 
-			<div class="row">
+			<div class="row" id="posts">
 				
-			<?php listPosts() ?>
+			<?php $query = listPosts() ?>
 
 			</div><!-- row -->
+			<?php wp_pagenavi( array( 'query' => $query )); ?>
 
-			<a class="load-more-btn" href="#"><b>LOAD MORE</b></a>
 
 		</div><!-- container -->
 	</section><!-- section -->
-
 
 	<?php
 
@@ -39,6 +38,7 @@ include_once("footer.php")
 	<script src="<?php echo $path?>/common-js/bootstrap.js"></script>
 
 	<script src="<?php echo $path?>/common-js/scripts.js"></script>
+	<script src="<?php echo $path?>/js/category.js"></script>
 
 </body>
 </html>

@@ -325,9 +325,9 @@ header .src-area .src-btn {
 --------------------------------- */
 
 .slider {
-    height: 300px;
+    height: 350px;
     width: 100%;
-    background-image: url(../../images/slider-1.jpg);
+    background-image: url(../../img/banner_topo_novo.png);
     background-size: cover;
 }
 
@@ -587,4 +587,35 @@ footer .input-area .submit-btn {
     opacity: .8;
     cursor: pointer;
     transition: all .2s;
+}
+
+.wp-pagenavi {
+    /* add this if you'd like your pagination centered:
+    margin: 0 auto;
+    display: table;
+    */
+    padding-top: 20px;
+    clear: both;
+}
+
+.wp-pagenavi a,
+.wp-pagenavi span {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid #00374E;
+    color: #444;
+    font-size: .9em;
+    margin: 2px;
+    padding: 4px 9px;
+}
+
+.wp-pagenavi a:hover,
+.wp-pagenavi span.current {
+    color: #000;
+    background: #00374E
+}
+
+.wp-pagenavi span.current {
+    font-weight: 400;
+    color: #fff;
 }

@@ -22,7 +22,7 @@ $post = conteudoPost();
 
 						<div class="post-top-area">
 
-							<h5 class="pre-title">FASHION</h5>
+							<h5 class="pre-title"></h5>
 
 							<h3 class="title"><a href="#"><b><?php echo $post['titulo'] ?></b></a></h3>
 

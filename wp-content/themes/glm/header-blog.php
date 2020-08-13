@@ -28,7 +28,7 @@
 
 
 <body >
-
+		<div id="url" data-url="<?php echo get_site_url(); ?>"></div>
 		<header>
 			<div class="container-fluid position-relative no-side-padding">
 
@@ -44,9 +44,9 @@
 				?>
 
 				<div class="src-area">
-					<form>
+					<form method="get" action="/">
 						<button class="src-btn" type="submit"><i class="ion-ios-search-strong"></i></button>
-						<input class="src-input" type="text" placeholder="Procurar...">
+						<input class="src-input" name="s" id="s" type="text" placeholder="Procurar...">
 					</form>
 				</div>
 

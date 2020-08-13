@@ -1,132 +1,73 @@
 
 <?php
 /* template name: search */
-
+$s = get_search_query();
 $path = get_template_directory_uri(); 
 
-include_once("header.php");
-$s = get_search_query();
+include_once("header-blog.php") 
+
 ?>
 
-<body>
-    <div class="title has-text-centered my-2" style="margin: 50px 0">
-        <h1>resultados encontrados para "<?php echo $allSearch,$s ?>"</h1>
-    </div>
-    <section class="section">
-        <div class="container is-fluid posts-categoria">
-            <div class="columns">
-                <div class="column is-8">
-                    <div class="categoria">
-                        <?php
 
-                        if (have_posts()) : ?>
-                        <?php
-                        while (have_posts()) : the_post(); ?>
-                            <a href='<?php the_permalink(); ?>'>
-                                <div class='post'>
-                                    <div class='imagem'>
-                                        <img class='first-image'src='<?php the_post_thumbnail_url(); ?>'>
-                                        <div class='icone'>
-                                            <img src='<?php echo $path ?>/img/icon-article.svg' alt='icone'>
-                                        </div>
-                                    </div>
-                                    <div class='content'>
-                                        <div class='title-post'>
-                                            <h2><?php the_title(); ?></h2>
-                                        </div>
-                                        <div class='description-post'>
-                                            <h3><?php the_excerpt();?></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </a>
-                            <article class="post <?php if ( has_post_thumbnail() ) { ?>has-thumbnail <?php } ?>">
-                                <!-- post-thumbnail -->
-                                <div class="post-thumbnail">
-                                    <a href=""></a>
-                                </div><!-- /post-thumbnail -->
-                            
-                                <h2><a href="<?php the_permalink(); ?>"></a></h2>
-                                <?php  ?>
-                            </article>
-                            
+	<section class="blog-area section">
+		<div class="container">
+
+			<div class="row">
+				
+			<?php
+
+            if (have_posts()) :
+
+            while (have_posts()) : the_post(); ?>
+
+        <div class='col-lg-4 col-md-6'>
+            <div class='card h-100'>
+                <div class='single-post post-style-1'>
+
+                    <div class='blog-image'><img src='<?php the_post_thumbnail_url(); ?>' alt='post image'></div>
+
+                    <a class='avatar' href='<?php the_permalink(); ?>'><img src='$foto' alt='Profile Image'></a>
+
+                    <div class='blog-info'>
+
+                        <h4 class='title'><a href='<?php the_permalink(); ?>'><b><?php the_title(); ?></b></a></h4>
+                        <p><?php the_excerpt();?></p>
+                        <ul class='post-footer'>
+                            <li><a href='<?php the_permalink(); ?>'><i class='ion-chatbubble'></i>$comments</a></li>
+                        </ul>
+
+                    </div><!-- blog-info -->
+                </div><!-- single-post -->
+            </div><!-- card -->
+        </div>
                             <?php endwhile;
+                            
                             else :
                                 echo '<p>Nenhum post encontrado</p>';
                             endif;
                         ?>
-                        <div class="columns is-hidden-desktop is-mobile">
-                        <?php postsPorCategoriaMobile("Corpo") ?>
 
-                        </div>
-                    </div>
+			</div><!-- row -->
+
+		</div><!-- container -->
+	</section><!-- section -->
+
+<?php
+
+include_once("footer.php") 
+
+?>
 
 
-                </div>
-                <div class="column is-4 banner">
-                    <div class="banner " id="banner">
-                        <div class="imagem" id="imagem">
-                            <img src="<?php echo $path?>/img/supercoffee.png">
-                        </div>
-                        
-                        <div class="publicacoes">
-                        <h3>Publicações mais lidas</h3>
-                            <div class="content-post">
-                                <div class="imagem">
-                                    <img class='first-image'src='https://s3-sa-east-1.amazonaws.com/caffeine-upload-production/app/public/assets/articles/59/large/data............?1588776487'>
-                                </div>
-                                <div class="post">
-                                    <div class="titulo">
-                                        Titulo
-                                    </div>
-                                    <div class="descricao">
-                                    Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-post">
-                                <div class="imagem">
-                                    <img class='first-image'src='https://s3-sa-east-1.amazonaws.com/caffeine-upload-production/app/public/assets/articles/59/large/data............?1588776487'>
-                                </div>
-                                <div class="post">
-                                    <div class="titulo">
-                                        Titulo
-                                    </div>
-                                    <div class="descricao">
-                                    Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="content-post">
-                                <div class="imagem">
-                                    <img class='first-image'src='https://s3-sa-east-1.amazonaws.com/caffeine-upload-production/app/public/assets/articles/59/large/data............?1588776487'>
-                                </div>
-                                <div class="post">
-                                    <div class="titulo">
-                                        Titulo
-                                    </div>
-                                    <div class="descricao">
-                                    Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao Descricao 
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="newsletter">
-                            <h4>Assine nossa Newsletter!</h4>
-                            <input placeholder="Seu melhor e-mail...">
-                            <button>Assinar</button>
-                        </div>
-                    </div>
-                </div>
+<!-- SCIPTS -->
 
-            </div>
-        </div>
-    </section>
+<script src="<?php echo $path?>/common-js/jquery-3.1.1.min.js"></script>
+
+<script src="<?php echo $path?>/common-js/tether.min.js"></script>
+
+<script src="<?php echo $path?>/common-js/bootstrap.js"></script>
+
+<script src="<?php echo $path?>/common-js/scripts.js"></script>
 
 </body>
-
-<script src="<?php echo $path?>/js/jquery-1.11.0.min.js"></script>
-<script src="<?php echo $path?>/js/slick.js"></script>
-<script src="<?php echo $path?>/js/main.js"></script>
-
-<?php include_once("footer.php") ?>
+</html>

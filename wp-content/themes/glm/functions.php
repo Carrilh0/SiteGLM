@@ -5,7 +5,9 @@ add_theme_support('post-thumbnails');
 
 function listPosts()
 {
-    $query = new WP_Query(['posts_per_page' => 9]);
+$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
+
+    $query = new WP_Query(['posts_per_page' => 9, 'paged' => $paged]);
     while($query->have_posts()){
 
         $query->the_post();        
@@ -13,15 +15,18 @@ function listPosts()
         $imagem = get_the_post_thumbnail_url(); 
         $titulo = get_the_title();
         $descricao = get_the_excerpt();
-        $link = get_post_permalink();
+        $link = get_the_permalink();
         $comments = get_comments_number(get_the_id());
+        $foto = get_avatar_url(get_the_author_meta('id'));
+
+
         echo "<div class='col-lg-4 col-md-6'>
         <div class='card h-100'>
             <div class='single-post post-style-1'>
 
                 <div class='blog-image'><img src='$imagem' alt='post image'></div>
 
-                <a class='avatar' href=''><img src='' alt='Profile Image'></a>
+                <a class='avatar' href='$link'><img src='$foto' alt='Profile Image'></a>
 
                 <div class='blog-info'>
 
@@ -36,6 +41,7 @@ function listPosts()
         </div><!-- card -->
         </div>";
     }
+    return $query;
 }
 
 function conteudoPost()
@@ -49,6 +55,7 @@ function conteudoPost()
             $post['autor'] = get_the_author();
             $post['data'] = get_the_date();
             $post['tags'] = get_the_tags();
+            $post['categoria'] = get_the_category(get_the_id());
             $post['comments'] = get_comment(get_the_id()); 
         }
     return $post;
@@ -85,8 +92,7 @@ function postsByTags($tags)
 
                         <div class='blog-info'>
 
-                            <h4 class='title'><a href='$link'><b>How Did Van Gogh's Turbulent Mind Depict One of the Most Complex
-                            Concepts in Physics?</b></a></h4>
+                            <h4 class='title'><a href='$link'><b>$titulo</b></a></h4>
 
                             <ul class='post-footer'>
                                 <li><a href='$link'><i class='ion-chatbubble'></i>$comments</a></li>
@@ -157,5 +163,30 @@ function placeholder_comment_form_field($fields) {
     return $fields;
  }
 add_filter( 'comment_form_defaults', 'placeholder_comment_form_field' );
+
+function isu_search_url( $query ) {
+
+    $page_id = 12; // This is ID of page with your structure -> http://example.com/mysearch/
+    $per_page = 10;
+    $post_type = 'activity'; // I just modify a bit this querry
+
+    // Now we must edit only query on this one page
+    if ( !is_admin() && $query->is_main_query() && $query->queried_object->ID == $page_id  ) {
+        // I like to have additional class if it is special Query like for activity as you can see
+        add_filter( 'body_class', function( $classes ) {
+            $classes[] = 'filter-search';
+            return $classes;
+        } );
+        $query->set( 'pagename', '' ); // we reset this one to empty!
+            $query->set( 'posts_per_page', $per_page ); // set post per page or dont ... :)
+            $query->set( 'post_type', $post_type ); // we set post type if we need (I need in this case)
+            // 3 important steps (make sure to do it, and you not on archive page, 
+            // or just fails if it is archive, use e.g. Query monitor plugin )
+            $query->is_search = true; // We making WP think it is Search page 
+            $query->is_page = false; // disable unnecessary WP condition
+            $query->is_singular = false; // disable unnecessary WP condition
+        }
+}
+add_action( 'pre_get_posts', 'isu_search_url' );
 ?>
 
