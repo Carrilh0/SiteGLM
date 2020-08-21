@@ -26,14 +26,14 @@ include_once("header-blog.php")
 
                     <div class='blog-image'><img src='<?php the_post_thumbnail_url(); ?>' alt='post image'></div>
 
-                    <a class='avatar' href='<?php the_permalink(); ?>'><img src='$foto' alt='Profile Image'></a>
+                    <a class='avatar' href='<?php the_permalink(); ?>'><img src='<?php echo get_avatar_url(get_the_author_meta('id')); ?>' alt='Profile Image'></a>
 
                     <div class='blog-info'>
 
                         <h4 class='title'><a href='<?php the_permalink(); ?>'><b><?php the_title(); ?></b></a></h4>
                         <p><?php the_excerpt();?></p>
                         <ul class='post-footer'>
-                            <li><a href='<?php the_permalink(); ?>'><i class='ion-chatbubble'></i>$comments</a></li>
+                            <li><a href='<?php the_permalink(); ?>'><i class='ion-chatbubble'></i><?php echo get_comments_number(get_the_id()); ?></a></li>
                         </ul>
 
                     </div><!-- blog-info -->

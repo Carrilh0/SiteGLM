@@ -80,6 +80,7 @@ function postsByTags($tags)
             $descricao = get_the_excerpt();
             $link = get_permalink();
             $comments = get_comments_number(get_the_id());
+            $foto = get_avatar_url(get_the_author_meta('id'));
 
             echo "
                 <div class='col-lg-4 col-md-6'>
@@ -88,7 +89,7 @@ function postsByTags($tags)
 
                         <div class='blog-image'><img src='$imagem' alt='Blog Image'></div>
 
-                        <a class='avatar' href='#'><img src='<?php echo $path?>/images/icons8-team-355979.jpg' alt='Profile Image'></a>
+                        <a class='avatar' href='#'><img src='$foto' alt='Profile Image'></a>
 
                         <div class='blog-info'>
 
